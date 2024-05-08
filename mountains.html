@@ -37,6 +37,19 @@
 <footer>
 
 </footer>
+<select id="mySelect"></select>
+
+<script>
+    const mySelect = document.getElementById("mySelect");
+    const options = ["Option 1", "Option 2", "Option 3"];
+
+    for (let i = 0; i < options.length; i++) {
+        const option = document.createElement("option");
+        option.text = options[i];
+        mySelect.add(option);
+    }
+</script>
+
 <script src="/scripts.js/mountains.js"></script>
 <body>
 
