@@ -21,33 +21,28 @@
     </nav>
 </header>
 <main>
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search...">
-        <div class="dropdown">
-          <button class="dropbtn">Dropdown</button>
-          <div class="dropdown-content">
-            <a href="#">Option 1</a>
-            <a href="#">Option 2</a>
-            <a href="#">Option 3</a>
-          </div>
-        </div>
-      </div>
+    <label for="studentDropdown">Choose a student:</label>
+    <select id="studentDropdown" name="dropdown"> 
+    </select>
+    <script>
+        // Array of student names
+            const students = ["Alice", "Bob", "Charlie", "David", "Eva"];
+
+            // Get the dropdown element
+            const dropdown = document.getElementById('studentDropdown');
+            // Populate the dropdown using a for loop
+            for (let index = 0; index < students.length; index++) {
+                const option = document.createElement('option');  // Create a new <option> element
+                option.value = students[index];  // Set the value attribute of the option
+                option.textContent = students[index];  // Set the text content of the option
+                dropdown.appendChild(option);  // Add the option to the dropdown
+            }
+    </script>
 </main>
 
-<footer>
 
-</footer>
-<select id="mySelect"></select>
 
-<script>
-    const mySelect = document.getElementById("mySelect");
-    const options = ["Option 1", "Option 2", "Option 3"];
 
-    for (let i = 0; i < options.length; i++) {
-        const option = document.createElement("option");
-        option.text = options[i];
-        mySelect.add(option);
-    }
 </script>
 
 <script src="/scripts.js/mountains.js"></script>
