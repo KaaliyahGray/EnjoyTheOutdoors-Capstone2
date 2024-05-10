@@ -24,6 +24,21 @@
     <label for="studentDropdown">Choose a student:</label>
     <select id="studentDropdown" name="dropdown"> 
     </select>
+    <label for="location">Choose a student:</label>
+    <select id="location" name="dropdown"> 
+
+        <div class="input-group mb-3">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+          </div>
+    </select>
     <script>
         // Array of student names
             const students = ["Alice", "Bob", "Charlie", "David", "Eva"];
@@ -37,6 +52,8 @@
                 option.textContent = students[index];  // Set the text content of the option
                 dropdown.appendChild(option);  // Add the option to the dropdown
             }
+
+            
     </script>
 </main>
 
