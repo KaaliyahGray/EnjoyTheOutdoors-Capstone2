@@ -6,7 +6,7 @@
       Mountname: "first",
       description: "",
       elevation: "",
-      location: "",
+      location: "hey",
       imageurl: "",
       levelofdifficulty: ""
     
@@ -21,7 +21,7 @@
      
     },
     {
-        Mountname: "",
+        Mountname: "third",
         description: "",
         elevation: "",
         location: "",
@@ -432,7 +432,7 @@
  const dropdown = document.getElementById('mountainDropdown');
  const infoDisplay = document.getElementById("mountainInfo");
 
- // Populate the dropdown options
+ // getting the dropdown options
 mountains.forEach(function(mountain) {
     let option = document.createElement("option");
     option.text = mountain.Mountname;
@@ -462,6 +462,13 @@ dropdown.addEventListener("change", function() {
     }
 });
 
+
+  function ClearFilters() {
+    const giftList = document.getElementById("giftIdeas");
+    giftList.value = null;
+    const searchfield = document.getElementById("mySearchField");
+    searchfield.value = "";
+  }
 
 
  
