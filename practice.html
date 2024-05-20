@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col-4">
+      <div id="list-example" class="list-group">
+        <a class="list-group-item list-group-item-action" href="#list-item-1">Mount Everest</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-2">K2</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-3">Kangchenjunga</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-4">Lhotse</a>
+      </div>
+    </div>
+    <div class="col-8">
+      <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+        <h4 id="list-item-1">Mount Everest</h4>
+        <p>Mount Everest, also known in Nepali as Sagarmatha and in Tibetan as Chomolungma, is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its peak is 8,848.86 meters (29,031.7 feet) above sea level.</p>
+        <h4 id="list-item-2">K2</h4>
+        <p>K2, also known as Mount Godwin-Austen or Chhogori, is the second-highest mountain in the world, after Mount Everest, at 8,611 meters (28,251 feet) above sea level.</p>
+        <h4 id="list-item-3">Kangchenjunga</h4>
+        <p>Kangchenjunga is the third highest mountain in the world, with an elevation of 8,586 meters (28,169 feet) and lies partly in Nepal and partly in the Indian state of Sikkim.</p>
+        <h4 id="list-item-4">Lhotse</h4>
+        <p>Lhotse is the fourth highest mountain in the world at 8,516 meters (27,940 feet) above sea level. It is located at the border between Tibet (China) and the Khumbu region of Nepal.</p>
+      </div>
+    </div>
+  </div>
+  
+  <label for="mountainDropdown">Choose a Mountain:</label>
+  <select id="mountainDropdown" name="dropdown" onchange="displayMountainInfo()"> 
+    <option value="Mount Everest">Mount Everest</option>
+    <option value="K2">K2</option>
+    <option value="Kangchenjunga">Kangchenjunga</option>
+    <option value="Lhotse">Lhotse</option>
+  </select>
+  
+  <div id="mountainInfo">
+    <!-- Info will be displayed here -->
+  </div>
+  <button id="myDropDowns" onclick="clearFilters()">Clear Filters</button>
+  
+  <script>
+    function displayMountainInfo() {
+      var dropdown = document.getElementById("mountainDropdown");
+      var selectedMountain = dropdown.options[dropdown.selectedIndex].value;
+      var mountainInfo = document.getElementById("mountainInfo");
+      
+      switch (selectedMountain) {
+        case "Mount Everest":
+          mountainInfo.innerHTML = "<h2>Mount Everest</h2><p>Mount Everest, also known in Nepali as Sagarmatha and in Tibetan as Chomolungma, is Earth's highest mountain above sea level, located in the Mahalangur Himal sub-range of the Himalayas. Its peak is 8,848.86 meters (29,031.7 feet) above sea level.</p>";
+          break;
+        case "K2":
+          mountainInfo.innerHTML = "<h2>K2</h2><p>K2, also known as Mount Godwin-Austen or Chhogori, is the second-highest mountain in the world, after Mount Everest, at 8,611 meters (28,251 feet) above sea level.</p>";
+          break;
+        case "Kangchenjunga":
+          mountainInfo.innerHTML = "<h2>Kangchenjunga</h2><p>Kangchenjunga is the third highest mountain in the world, with an elevation of 8,586 meters (28,169 feet) and lies partly in Nepal and partly in the Indian state of Sikkim.</p>";
+          break;
+        case "Lhotse":
+          mountainInfo.innerHTML = "<h2>Lhotse</h2><p>Lhotse is the fourth highest mountain in the world at 8,516 meters (27,940 feet) above sea level. It is located at the border between Tibet (China) and the Khumbu region of Nepal.</p>";
+          break;
+        default:
+          mountainInfo.innerHTML = "";
+      }
+    }
+  
+    function clearFilters() {
+      document.getElementById("mountainDropdown").selectedIndex = 0;
+      document.getElementById("mountainInfo").innerHTML = "";
+    }
+  </script>
+  
+  // function with the loop
+function location(nationalPark) {
+    let i = 0;
+    while (i < nationalPark.length) {
+        const park = nationalPark[i];
+        if (park.location >= "Arizona") {
+            console.log(`Here are your choices of parks in AZ ${park.name}`);
+        } else {
+          
+        }
+        i++;
+    }
+}    
+// Call the function
+location(nationalPark);
+
+ // function with the loop
+ function Type(nationalPark) {
+    let i = 0;
+    while (i < nationalPark.length) {
+        const park = nationalPark[i];
+        if (park.parkType >= "Gym") {
+            console.log(`Here are your choices gym parks ${park.name}`);
+        } else {
+          
+        }
+        i++;
+    }
+}    
+// Call the function
+Type(nationalPark);

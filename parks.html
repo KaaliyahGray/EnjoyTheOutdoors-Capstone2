@@ -21,11 +21,19 @@
     </nav>
 </header>
 <main>
-    <label for="mountainDropdown">Choose a Mountain:</label>
-    <select id="mountainDropdown" name="dropdown"> 
-    </select>
-    <label for="mountainDropdown">Choose a Mountain:</label>
-    <select id="mountainDropdown" name="dropdown"> 
+    <div class="container">
+        <h1 class="mt-4 mb-4">Filtered Courses</h1>
+        <div class="form-group">
+          <label for="priceFilter">Filter by Price:</label>
+          <select class="form-control" id="priceFilter">
+            <option value="all">All Prices</option>
+            <option value="free">Free</option>
+            <option value="under50">Under $50</option>
+            <option value="under100">Under $100</option>
+            <option value="over100">Over $100</option>
+          </select>
+        </div>
+        <div class="row" id="courseCards">
     </select>
 </main>
 

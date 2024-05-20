@@ -1,5 +1,7 @@
 "use strict";
 
+
+
  // Array of mountains
  let mountains = [
   {
