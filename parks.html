@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>National Parks</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="/css/parks.css">
 </head>
 <header>
@@ -22,26 +24,35 @@
 </header>
 <main>
     <div class="container">
-        <h1 class="mt-4 mb-4">Filtered Courses</h1>
+        <h1 class="mt-4 mb-4"></h1>
         <div class="form-group">
-          <label for="priceFilter">Filter by Price:</label>
-          <select class="form-control" id="priceFilter">
-            <option value="all">All Prices</option>
-            <option value="free">Free</option>
-            <option value="under50">Under $50</option>
-            <option value="under100">Under $100</option>
-            <option value="over100">Over $100</option>
+          <label for="priceFilter">Filter by Park Type:</label>
+          <select class="form-control" id="parkFilter">
+            <option value="National Park">National Park</option>
+            <option value="National Monument">National Monument</option>
+            <option value="Recreation Area">Recreation Area</option>
+            <option value="Scenic Trail">Scenic Trail</option>
+            <option value="Battlefield">Battlefield</option>
+            <option value="Historic">Historic</option>
+            <option value="Memorial">Memorial</option>
+            <option value="Preserve">Preserve</option>
+            <option value="Island">Island</option>
+            <option value="River">River</option>
+            <option value="Seashore">Seashore</option>
+            <option value="Trail">Trail</option>
+            <option value="Parkway">Parkway</option>
           </select>
         </div>
-        <div class="row" id="courseCards">
+        <div class="row" id="parkTypes">
     </select>
 </main>
 
-<footer>
 
-</footer>
-<script src="/scripts.js/parks.js"></script>
-<body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/scripts/parks.js"></script>
+
 
 </body>
 
