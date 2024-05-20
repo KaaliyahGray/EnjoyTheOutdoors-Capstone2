@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>National Parks</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/parks.css">
 </head>
@@ -25,7 +26,10 @@
 <main>
     <div class="container">
         <h1 class="mt-4 mb-4"></h1>
-        <div class="form-group">
+        <div class="form-group"> 
+            <label for="priceFilter">Filter by Locaton Type:</label>
+            <select class="form-control" id="stateFilter"></select>
+        <div class = "row" id=" states"></div> 
           <label for="priceFilter">Filter by Park Type:</label>
           <select class="form-control" id="parkFilter">
             <option value="National Park">National Park</option>
@@ -43,10 +47,12 @@
             <option value="Parkway">Parkway</option>
           </select>
         </div>
+        <br>
         <div class="row" id="parkTypes">
-
+</div>
+        
           
-    </select>
+
 </main>
 
 <footer>
@@ -60,4 +66,4 @@
 
 </body>
 
-</html> 
+</html>  

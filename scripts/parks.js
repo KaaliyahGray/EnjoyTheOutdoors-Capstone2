@@ -1,4 +1,12 @@
 "use strict";
+// Wait until the DOM content is fully loaded before executing the script
+document.addEventListener("DOMContentLoaded", init);
+
+// Initialize the application by populating the dropdown and setting up event listeners
+function init() {
+  populateDropdown(); // Fill the dropdown with Saiyan options
+  setupEventListeners(); // Set up the event listeners for button clicks
+}
 
 const nationalParks = [
   {
@@ -5820,51 +5828,17 @@ const nationalParks = [
 ];
 
 //
-let amountofParks = nationalParks.length;
-console.log(amountofParks);
 
-for (let index = 0; index < nationalParks.length; index++) {
-  const title = nationalParks[index].LocationName;
-  console.log(title);
-}
-
-
-// Filter based on location
+// <----Filter By Park Type ---->
 function filterParkType(LocationName) {
   const filteredParkType = LocationName === 'all' ? nationalParks : nationalParks.filter(nationalPark => {
-    switch (LocationName) {
-      case 'National Park':
-        return nationalPark.LocationName.toLowerCase() === 'National Park';
-      case 'National Monument':
-        return  parseFloat(nationalPark.LocationName) == "National Monument";
-      case 'Recreation Area':
-        return parseFloat(nationalPark.LocationName) == 'Recreation Area';
-      case 'Scenic Trail':
-        return  parseFloat(nationalPark.LocationName) == ' Scenic Trail';
-      case 'Battlefield':
-        return  parseFloat(nationalPark.LocationName) == 'Battlefield ';
-      case 'Historic':
-        return  parseFloat(nationalPark.LocationName) == 'Historic';
-      case 'Memorial':
-        return  parseFloat(nationalPark.LocationName) == 'Memorial';
-      case 'Preserve':
-        return parseFloat(nationalPark.LocationName) == 'Preserve';
-      case 'Island':
-        return  parseFloat(nationalPark.LocationName) == 'Island';
-      case 'River':
-        return parseFloat(nationalPark.LocationName) == 'River';
-      case 'Seashore':
-        return  parseFloat(nationalPark.LocationName) == 'Seashore';
-      case 'Trail':
-        return  parseFloat(nationalPark.LocationName) == 'Trail';
-      case 'Parkway':
-        return  parseFloat(nationalPark.LocationName) == 'Parkway';
-      default:
-        return nationalPark.LocationName === '';    }
+    return nationalPark.LocationName.toLowerCase().includes(LocationName.toLowerCase());
   });
-
   return filteredParkType;
 }
+
+// grab the value from the dropdown, which national park has been selected
+let seleectedLocation  = document.getElementById('parkFilter').value;
 
 // Render course cards based on filtered courses
 function renderParks(filteredParkType) {
@@ -5874,10 +5848,10 @@ function renderParks(filteredParkType) {
     const card = `
         <div class="col-md-4 mb-4">
           <div class="card">
-            <img src="${nationalPark.CourseImage}" class="card-img-top" alt="${nationalPark.LocationName}">
+            <img src="${nationalPark.Image}" class="card-img-top" alt="${nationalPark.LocationName}">
             <div class="card-body">
               <h5 class="card-title">${nationalPark.Address}</h5>
-              <h5 class="card-title"> Location ${nationalPark.City.State.ZipCode}</h5>
+              <h5 class="card-title"> Location ${nationalPark.ZipCode}</h5>
               <p class="card-text">Phone: ${nationalPark.Phone}</p>
               <p class="card-text">Type: ${nationalPark.type}</p>
             </div>
@@ -5888,15 +5862,18 @@ function renderParks(filteredParkType) {
   });
 }
 
-// Initial render
-renderParks(nationalParks);
 
 // Event listener for park filter dropdown change
 document.getElementById('parkFilter').addEventListener('change', function() {
   const selectedPark = this.value;
+  alert(selectedPark);
   const filteredParkType = filterParkType(selectedPark); // Fixed function name here
   renderParks(filteredParkType);
 });
+
+
+
+// <----Filter By Location ---->
 
 const locationsArray = [
   "Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
@@ -5908,7 +5885,49 @@ const locationsArray = [
   "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming",
 ];
 
-const stateFilter = document.getElementById('stateFilter');
+
+function filterLocation(State) {
+  const filteredLocation = State === 'all' ? nationalParks : nationalParks.filter(nationalPark => {
+    return nationalPark.State.toLowerCase().includes(State.toLowerCase());
+  });
+  return filteredLocation;
+}
+// grab the value from the dropdown, which Location has been selected
+let selectedLocation  = document.getElementById('stateFilter').value;
+
+// Render based on filtered Location
+function renderLocation(filteredLocation) {
+  const locationContainer = document.getElementById('states');
+  locationContainer.innerHTML = '';
+  filteredLocation.forEach(nationalPark => {
+    const card = `
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="${nationalPark.Image}" class="card-img-top" alt="${nationalPark.LocationName}">
+            <div class="card-body">
+              <h5 class="card-title">${nationalPark.Address}</h5>
+              <h5 class="card-title"> Location ${nationalPark.ZipCode}</h5>
+              <p class="card-text">Phone: ${nationalPark.Phone}</p>
+              <p class="card-text">Type: ${nationalPark.type}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    locationContainer.innerHTML += card;
+  });
+}
+
+
+// Event listener for state filter dropdown change
+document.getElementById('stateFilter').addEventListener('change', function() {
+  const selectedLocation = this.value;
+  alert(selectedLocation);
+  const filteredLocation = filterParkType(selectedLocation); // Fixed function name here
+  renderLocation(filteredLocation);
+});
+
+
+
 
 locationsArray.forEach(state => {
   const option = document.createElement('option');
