@@ -24,13 +24,15 @@
     </nav>
 </header>
 <main>
-    <div class="container">
+    <div class="container1">
+        <h1>Lets Go To A Park</h1>
         <h1 class="mt-4 mb-4"></h1>
         <div class="form-group"> 
-            <label for="priceFilter">Filter by Locaton Type:</label>
+            <label for="Location">Filter by Locaton:</label>
             <select class="form-control" id="stateFilter"></select>
-        <div class = "row" id=" states"></div> 
-          <label for="priceFilter">Filter by Park Type:</label>
+            
+        <div class = "row" id="states"></div> 
+          <label for="ParkType">Filter by Park:</label>
           <select class="form-control" id="parkFilter">
             <option value="National Park">National Park</option>
             <option value="National Monument">National Monument</option>
@@ -49,6 +51,7 @@
         </div>
         <br>
         <div class="row" id="parkTypes">
+
 </div>
         
           
@@ -58,6 +61,138 @@
 <footer>
 
 </footer>
+
+
+<script>
+
+
+
+// <----Filter By Park Type ---->
+    function filterParkType(LocationName) {
+  const filteredParkType = LocationName === 'all' ? nationalParks : nationalParks.filter(nationalPark => {
+    return nationalPark.LocationName.toLowerCase().includes(LocationName.toLowerCase());
+  });
+  return filteredParkType;
+}
+
+// grab the value from the dropdown, which national park has been selected
+let seleectedLocation  = document.getElementById('parkFilter').value;
+
+// Render course cards based on filtered courses
+function renderParks(filteredParkType) {
+  const ParkContainer = document.getElementById('parkTypes');
+  ParkContainer.innerHTML = '';
+  filteredParkType.forEach(nationalPark => {
+    const card = `
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="${nationalPark.Image}" class="card-img-top" alt="${nationalPark.LocationName}">
+            <div class="card-body">
+              <h5 class="card-title">${nationalPark.Address}</h5>
+              <h5 class="card-title"> Location ${nationalPark.ZipCode}</h5>
+              <p class="card-text">Phone: ${nationalPark.Phone}</p>
+              <p class="card-text">Type: ${nationalPark.type}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    ParkContainer.innerHTML += card;
+  });
+}
+
+
+// Event listener for park filter dropdown change
+document.getElementById('parkFilter').addEventListener('change', function() {
+  const selectedPark = this.value;
+  const filteredParkType = filterParkType(selectedPark); // Fixed function name here
+  renderParks(filteredParkType);
+});
+
+
+
+// <----Filter By Location ---->
+
+
+    const locationsArray = [
+  "Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+  "Delaware", "DC", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+  "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
+  "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico",
+  "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico",
+  "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands",
+  "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming",
+];
+
+
+
+
+
+function filterLocation(State) {
+  const filteredLocation = State === 'all' ? nationalParks : nationalParks.filter(nationalPark => {
+    return nationalPark.State.toLowerCase().includes(State.toLowerCase());
+  });
+  return filteredLocation;
+}
+// grab the value from the dropdown, which Location has been selected
+let selectedLocation  = document.getElementById('parkFilter').value;
+
+// Render based on filtered Location
+function renderLocation(filteredLocation) {
+  const locationContainer = document.getElementById('parkTypes');
+  locationContainer.innerHTML = '';
+  filteredLocation.forEach(nationalPark => {
+    const card = `
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="${nationalPark.Image}" class="card-img-top" alt="${nationalPark.LocationName}">
+            <div class="card-body">
+              <h5 class="card-title">${nationalPark.Address}</h5>
+              <h5 class="card-title"> Location ${nationalPark.ZipCode}</h5>
+              <p class="card-text">Phone: ${nationalPark.Phone}</p>
+              <p class="card-text">Type: ${nationalPark.type}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    locationContainer.innerHTML += card;
+  });
+}
+
+
+// Event listener for state filter dropdown change
+document.getElementById('stateFilter').addEventListener('change', function() {
+  const selectedLocation = this.value;
+  alert(selectedLocation);
+  const filteredLocation = filterParkType(selectedLocation); // Fixed function name here
+  renderLocation(filteredLocation);
+});
+
+
+
+
+locationsArray.forEach(state => {
+  const option = document.createElement('option');
+  option.value = state;
+  option.textContent = state;
+  stateFilter.appendChild(option);
+});
+
+stateFilter.addEventListener('change', function() {
+  const selectedValue = this.value;
+  const otherOptions = [...this.options].filter(option => option.value !== selectedValue);
+
+  // Hide other options
+  otherOptions.forEach(option => {
+      option.style.display = 'none';
+  });
+});
+
+
+
+
+
+
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -1,12 +1,12 @@
 "use strict";
 // Wait until the DOM content is fully loaded before executing the script
-document.addEventListener("DOMContentLoaded", init);
+// document.addEventListener("DOMContentLoaded", init);
 
 // Initialize the application by populating the dropdown and setting up event listeners
-function init() {
-  populateDropdown(); // Fill the dropdown with Saiyan options
-  setupEventListeners(); // Set up the event listeners for button clicks
-}
+// function init() {
+//   populateDropdown(); // Fill the dropdown with Saiyan options
+//   setupEventListeners(); // Set up the event listeners for button clicks
+// }
 
 const nationalParks = [
   {
@@ -5829,122 +5829,11 @@ const nationalParks = [
 
 //
 
-// <----Filter By Park Type ---->
-function filterParkType(LocationName) {
-  const filteredParkType = LocationName === 'all' ? nationalParks : nationalParks.filter(nationalPark => {
-    return nationalPark.LocationName.toLowerCase().includes(LocationName.toLowerCase());
-  });
-  return filteredParkType;
-}
-
-// grab the value from the dropdown, which national park has been selected
-let seleectedLocation  = document.getElementById('parkFilter').value;
-
-// Render course cards based on filtered courses
-function renderParks(filteredParkType) {
-  const ParkContainer = document.getElementById('parkTypes');
-  ParkContainer.innerHTML = '';
-  filteredParkType.forEach(nationalPark => {
-    const card = `
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="${nationalPark.Image}" class="card-img-top" alt="${nationalPark.LocationName}">
-            <div class="card-body">
-              <h5 class="card-title">${nationalPark.Address}</h5>
-              <h5 class="card-title"> Location ${nationalPark.ZipCode}</h5>
-              <p class="card-text">Phone: ${nationalPark.Phone}</p>
-              <p class="card-text">Type: ${nationalPark.type}</p>
-            </div>
-          </div>
-        </div>
-      `;
-    ParkContainer.innerHTML += card;
-  });
-}
-
-
-// Event listener for park filter dropdown change
-document.getElementById('parkFilter').addEventListener('change', function() {
-  const selectedPark = this.value;
-  alert(selectedPark);
-  const filteredParkType = filterParkType(selectedPark); // Fixed function name here
-  renderParks(filteredParkType);
-});
-
-
-
-// <----Filter By Location ---->
-
-const locationsArray = [
-  "Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
-  "Delaware", "DC", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
-  "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
-  "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico",
-  "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico",
-  "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands",
-  "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming",
-];
-
-
-function filterLocation(State) {
-  const filteredLocation = State === 'all' ? nationalParks : nationalParks.filter(nationalPark => {
-    return nationalPark.State.toLowerCase().includes(State.toLowerCase());
-  });
-  return filteredLocation;
-}
-// grab the value from the dropdown, which Location has been selected
-let selectedLocation  = document.getElementById('stateFilter').value;
-
-// Render based on filtered Location
-function renderLocation(filteredLocation) {
-  const locationContainer = document.getElementById('states');
-  locationContainer.innerHTML = '';
-  filteredLocation.forEach(nationalPark => {
-    const card = `
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="${nationalPark.Image}" class="card-img-top" alt="${nationalPark.LocationName}">
-            <div class="card-body">
-              <h5 class="card-title">${nationalPark.Address}</h5>
-              <h5 class="card-title"> Location ${nationalPark.ZipCode}</h5>
-              <p class="card-text">Phone: ${nationalPark.Phone}</p>
-              <p class="card-text">Type: ${nationalPark.type}</p>
-            </div>
-          </div>
-        </div>
-      `;
-    locationContainer.innerHTML += card;
-  });
-}
-
-
-// Event listener for state filter dropdown change
-document.getElementById('stateFilter').addEventListener('change', function() {
-  const selectedLocation = this.value;
-  alert(selectedLocation);
-  const filteredLocation = filterParkType(selectedLocation); // Fixed function name here
-  renderLocation(filteredLocation);
-});
 
 
 
 
-locationsArray.forEach(state => {
-  const option = document.createElement('option');
-  option.value = state;
-  option.textContent = state;
-  stateFilter.appendChild(option);
-});
 
-stateFilter.addEventListener('change', function() {
-  const selectedValue = this.value;
-  const otherOptions = [...this.options].filter(option => option.value !== selectedValue);
-
-  // Hide other options
-  otherOptions.forEach(option => {
-      option.style.display = 'none';
-  });
-});
 
 
 
