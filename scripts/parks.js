@@ -5829,11 +5829,6 @@ for (let index = 0; index < nationalParks.length; index++) {
 }
 
 
-
-
-
-
-
 // Filter based on location
 function filterParkType(LocationName) {
   const filteredParkType = LocationName === 'all' ? nationalParks : nationalParks.filter(nationalPark => {
@@ -5903,12 +5898,37 @@ document.getElementById('parkFilter').addEventListener('change', function() {
   renderParks(filteredParkType);
 });
 
-// Additional code
-const allbuttons = document.querySelectorAll('.myButton');
-console.log(allbuttons);
-allbuttons.forEach(button => 
-  button.addEventListener('mouseover', runSecondCode)
-);
+const locationsArray = [
+  "Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+  "Delaware", "DC", "Florida", "Georgia", "Guam", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+  "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
+  "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico",
+  "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Puerto Rico",
+  "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands",
+  "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming",
+];
+
+const stateFilter = document.getElementById('stateFilter');
+
+locationsArray.forEach(state => {
+  const option = document.createElement('option');
+  option.value = state;
+  option.textContent = state;
+  stateFilter.appendChild(option);
+});
+
+stateFilter.addEventListener('change', function() {
+  const selectedValue = this.value;
+  const otherOptions = [...this.options].filter(option => option.value !== selectedValue);
+
+  // Hide other options
+  otherOptions.forEach(option => {
+      option.style.display = 'none';
+  });
+});
+
+
+
 
 
 

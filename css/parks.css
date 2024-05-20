@@ -53,3 +53,30 @@
     margin-bottom: 10px;
   }
 }
+
+/* Custom styles for the dropdown */
+.custom-select {
+  border-radius: 10px; /* Rounded corners */
+  border-color: #281881; /* Border color */
+  background-color: #281881; /* Background color */
+  color: #495057; /* Text color */
+}
+
+.custom-select:focus {
+  border-color: #281881; /* Border color on focus */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Box shadow on focus */
+}
+
+/* Arrow icon */
+.custom-select::after {
+  content: url('https://cdn-icons-png.flaticon.com/512/25/25231.png'); /* Custom arrow icon */
+  position: absolute;
+  top: calc(50% - 6px); /* Vertically center the icon */
+  right: 50px; /* Position the icon on the right */
+  pointer-events: none; /* Ensure the icon doesn't interfere with interaction */
+}
+
+/* Hover effect */
+.custom-select:hover {
+  border-color: #281881; /* Border color on hover */
+}

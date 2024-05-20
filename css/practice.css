@@ -1,0 +1,102 @@
+/* parks.css */
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+}
+
+/* Main */
+.container {
+    margin-top: 50px; /* Add some space from the top */
+}
+
+h1 {
+    color: #004734; /* Dark green header text */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Add space below form */
+}
+
+label {
+    font-weight: bold;
+    color: #004734; /* Dark green label text */
+}
+
+/* Footer */
+footer {
+    background-color: #00693E; /* Dark green footer */
+    color: #fff; /* White text for footer */
+    padding: 20px 0;
+    text-align: center;
+}
+.navbar {
+    background-color: #FFA500; /* Orange */
+}
+
+.nav-links li a {
+    color: #800080; /* Purple */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #800080; /* Purple */
+    color: #FFFFFF; /* White */
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Form Styling */
+.form-group label {
+    color: #800080; /* Purple */
+}
+
+/* Select Styling */
+#parkFilter {
+    color: #800080; /* Purple */
+    border-color: #800080; /* Purple */
+}/* parks.css */
+
+/* Custom styles for dropdowns */
+.form-control {
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+}
+
+/* Styling the dropdown arrow */
+.form-control::after {
+    content: url('https://cdn-icons-png.flaticon.com/512/25/25231.png');
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Hover effect */
+.form-control:hover {
+    border-color: #adb5bd;
+}
+
+/* Focus effect */
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Styling dropdown options */
+.dropdown-menu {
+    border-radius: 20px;
+}
+
+.dropdown-item {
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
