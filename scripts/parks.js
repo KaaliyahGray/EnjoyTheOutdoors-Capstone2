@@ -5937,8 +5937,6 @@ function filterLocation(LocationName) {
 }
 
 
-
-
 // Event listener for park filter dropdown change
 document.getElementById('stateFilter').addEventListener('change', function() {
   const stateFilterSelect = this.value;
@@ -5958,8 +5956,27 @@ locationsArray.forEach(location => {
 
 
 
+// Assume locationsArray and parkTypesArray are predefined arrays
+
+function populateDropdown(selectedOption) {
+  const dropdown = document.getElementById('one');
+  dropdown.innerHTML = '';
 
 
+  if (selectedOption === 'location') {
+    locationsArray.forEach(location => {
+        const option = document.createElement("option");
+        option.textContent = location;
+        dropdown.appendChild(option);
+    });
+} else if (selectedOption === 'parkType') {
+    parkTypesArray.forEach(parkType => {
+        const option = document.createElement("option");
+        option.textContent = parkType;
+        dropdown.appendChild(option);
+    });
+}
+}
 
 
 
