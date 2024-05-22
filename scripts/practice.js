@@ -1,78 +1,46 @@
-"use strict";
+$(document).ready(function() {
+  // Function to fetch national parks data
+  function fetchParks() {
+    // Make API request to fetch national parks data
+    $.ajax({
+      url: 'https://api.nps.gov/api/v1/parks',
+      type: 'GET',
+      data: {
+        api_key: 'YOUR_API_KEY', // Replace with your NPS API key
+        limit: 5 // Limiting to 5 parks for demonstration
+      },
+      success: function(data) {
+        displayParks(data.data);
+      },
+      error: function(err) {
+        console.log('Error fetching parks:', err);
+      }
+    });
+  }
 
-// <----Filter By Park Type ---->
-function filterParkType(State) {
-  const filteredLocation = State === 'all' ? nationalParks : nationalParks.filter(nationalPark => {
-    return nationalPark.State.toLowerCase().includes(State.toLowerCase());
-  });
-  return filteredLocation;
-}
+  // Function to display parks data
+  function displayParks(parks) {
+    var parkList = $('#parkList');
+    parkList.empty(); // Clear previous content
 
-// grab the value from the dropdown, which national park has been selected
-// let selectedLocation  = document.getElementById('parkFilter').value;
-
-// // Render course cards based on filtered courses
-// function renderParks(filteredLocation) {
-//   const ParkContainer = document.getElementById('Location');
-//   ParkContainer.innerHTML = '';
-//   filteredLocation.forEach(nationalPark => {
-//     const card = `
-//         <div class="col-md-4 mb-4">
-//           <div class="card">
-//             <img src="${nationalPark.Image}" class="card-img-top" alt="${nationalPark.LocationName}">
-//             <div class="card-body">
-//               <h5 class="card-title">${nationalPark.Address}</h5>
-//               <h5 class="card-title"> Location ${nationalPark.ZipCode}</h5>
-//               <p class="card-text">Phone: ${nationalPark.Phone}</p>
-//               <p class="card-text">Type: ${nationalPark.type}</p>
-//             </div>
-//           </div>
-//         </div>
-//       `;
-//     ParkContainer.innerHTML += card;
-//   });
-// }
-
-
-function renderLocation(filteredLocation) {
-  const locationContainer = document.getElementById('stateFilter');
-  locationContainer.innerHTML = '';
-
-  const selectedState = stateFilter.value; // Get the selected state
-
-  filteredLocation.forEach(nationalPark => {
-    // Check if the national park matches the selected state
-    if (nationalPark.State === selectedState) {
-      const card = `
+    // Loop through each park and create card for it
+    parks.forEach(function(park) {
+      var parkCard = `
         <div class="col-md-4 mb-4">
           <div class="card">
-            <img src="${nationalPark.Image}" class="card-img-top" alt="${nationalPark.LocationName}">
+            <img src="${park.images[0].url}" class="card-img-top" alt="${park.fullName}">
             <div class="card-body">
-              <h5 class="card-title">${nationalPark.Address}</h5>
-              <h5 class="card-title"> Location ${nationalPark.ZipCode}</h5>
-              <p class="card-text">Phone: ${nationalPark.Phone}</p>
-              <p class="card-text">Type: ${nationalPark.type}</p>
+              <h5 class="card-title">${park.fullName}</h5>
+              <p class="card-text">${park.description}</p>
+              <a href="${park.url}" class="btn btn-primary" target="_blank">Learn More</a>
             </div>
           </div>
         </div>
       `;
-      locationContainer.innerHTML += card;
-    }
-  });
-}
+      parkList.append(parkCard); // Append card to parkList
+    });
+  }
 
-// Assuming stateFilter is the select element
-stateFilter.addEventListener('change', function() {
-  renderLocation(filteredLocation); // Render based on selected state
-});
-
-
-
-
-
-// Event listener for park filter dropdown change
-document.getElementById('parkFilter').addEventListener('change', function() {
-  const selectedLocation = this.value;
-  const filteredLocation = filterParkType(selectedLocation); // Fixed function name here
-  renderParks(filteredLocation);
+  // Fetch parks data when page is loaded
+  fetchParks();
 });

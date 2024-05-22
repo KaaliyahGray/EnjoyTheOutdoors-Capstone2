@@ -1,102 +1,76 @@
-/* parks.css */
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
 
-/* Body */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa; /* Light gray background */
-}
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
 
-/* Main */
-.container {
-    margin-top: 50px; /* Add some space from the top */
-}
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
 
-h1 {
-    color: #004734; /* Dark green header text */
-}
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
 
-.form-group {
-    margin-bottom: 20px; /* Add space below form */
-}
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
 
-label {
-    font-weight: bold;
-    color: #004734; /* Dark green label text */
-}
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
 
-/* Footer */
-footer {
-    background-color: #00693E; /* Dark green footer */
-    color: #fff; /* White text for footer */
-    padding: 20px 0;
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
     text-align: center;
-}
-.navbar {
-    background-color: #FFA500; /* Orange */
-}
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
 
-.nav-links li a {
-    color: #800080; /* Purple */
-}
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-/* Footer Styling */
-footer {
-    background-color: #800080; /* Purple */
-    color: #FFFFFF; /* White */
-    padding: 20px 0;
-    text-align: center;
-}
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
 
-/* Form Styling */
-.form-group label {
-    color: #800080; /* Purple */
-}
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
 
-/* Select Styling */
-#parkFilter {
-    color: #800080; /* Purple */
-    border-color: #800080; /* Purple */
-}/* parks.css */
-
-/* Custom styles for dropdowns */
-.form-control {
-    border-radius: 20px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ced4da;
-}
-
-/* Styling the dropdown arrow */
-.form-control::after {
-    content: url('https://cdn-icons-png.flaticon.com/512/25/25231.png');
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-/* Hover effect */
-.form-control:hover {
-    border-color: #adb5bd;
-}
-
-/* Focus effect */
-.form-control:focus {
-    border-color: #80bdff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-/* Styling dropdown options */
-.dropdown-menu {
-    border-radius: 20px;
-}
-
-.dropdown-item {
-    font-size: 16px;
-    padding: 10px 20px;
-}
-
-.dropdown-item:hover {
-    background-color: #f8f9fa;
-}
+  .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+  }

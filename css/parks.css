@@ -6,14 +6,18 @@
   padding: 40px 0;
 }
 
-.container {
-  display: flex;
+main {
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-image: url("/");
+flex-grow: 1;
 }
-.main{
 
-  background-image: url("/images/backkk.avif");
+body{
+height: 100vh;
+display: flex;
+
 
 }
 .logo {
@@ -84,27 +88,21 @@
 .custom-select:hover {
   border-color: #281881; /* Border color on hover */
 }
+.container-fluid{
 
-#parkTypes {
-  width: 70%; /* Set width as needed */
-  margin: 0 auto; /* Center the element horizontally */
-  padding-left: 80px; /* Add padding to the left */
-  position: absolute;
-  right: 5%;
+  margin-top: 400px;
 }
-.form-control, .form-group, .form-floating {
-  width: 50%; /* Adjust the width as needed */
-    margin-right: auto; /* This pushes the element to the left */
-    margin-left: 0;
-    padding-left: 50px;
-   
-  
- }
- 
 
- h1{
-  margin-right: auto; /* This pushes the element to the left */
-  margin-left: 0;
-  padding-left: 200px;
-  margin-top: 0px;
- }
+.form-group, h1 {
+  max-width: 400px; /* Adjust the max-width as needed */
+  margin: 0 auto; /* This centers the container horizontally */
+  padding: 20px; /* Add padding for spacing */
+}
+  #parkTypes{
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x)* 4);
+    padding-left: calc(var(--bs-gutter-x)* 4);
+    margin-right: auto;
+ 
+}
