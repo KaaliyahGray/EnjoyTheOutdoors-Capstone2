@@ -5929,13 +5929,30 @@ const locationsArray = [
   "Wyoming",
 ];
 
+function filterLocation(LocationName) {
+  const filteredLocation = nationalParks.filter(nationalPark => {
+    return nationalPark.State.toLowerCase().includes(LocationName.toLowerCase());
+  });
+  return filteredLocation;
+}
 
-const stateFilterSelect = document.getElementById("stateFilter");
 
-// Populate options from the array
+
+
+// Event listener for park filter dropdown change
+document.getElementById('stateFilter').addEventListener('change', function() {
+  const stateFilterSelect = this.value;
+  // alert(stateFilterSelect);
+  const filteredLocation = filterLocation(stateFilterSelect); // Fixed function name here
+  renderParks(filteredLocation);
+});
+
+let stateFilterSelect  = document.getElementById('stateFilter');
+// Populate options from the arraystate
 locationsArray.forEach(location => {
   const option = document.createElement("option");
   option.textContent = location;
+ // option.value = location;
   stateFilterSelect.appendChild(option);
 });
 
