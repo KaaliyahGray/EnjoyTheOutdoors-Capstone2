@@ -11,7 +11,11 @@
   justify-content: space-between;
   align-items: center;
 }
+.main{
 
+  background-image: url("/images/backkk.avif");
+
+}
 .logo {
   color: #fff;
   text-decoration: none;
@@ -88,7 +92,7 @@
   position: absolute;
   right: 5%;
 }
-.form-control, .form-group {
+.form-control, .form-group, .form-floating {
   width: 50%; /* Adjust the width as needed */
     margin-right: auto; /* This pushes the element to the left */
     margin-left: 0;
@@ -101,6 +105,6 @@
  h1{
   margin-right: auto; /* This pushes the element to the left */
   margin-left: 0;
-  padding-left: 50px;
-  margin-top: 300px;
+  padding-left: 200px;
+  margin-top: 0px;
  }

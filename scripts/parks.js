@@ -5827,7 +5827,120 @@ const nationalParks = [
   },
 ];
 
-//
+// <----Filter By Park Type ---->
+function filterParkType(LocationName) {
+  const filteredParkType = LocationName === 'all' ? nationalParks : nationalParks.filter(nationalPark => {
+    return nationalPark.LocationName.toLowerCase().includes(LocationName.toLowerCase());
+  });
+  return filteredParkType;
+}
+
+// grab the value from the dropdown, which national park has been selected
+let selectedPark  = document.getElementById('parkFilter').value;
+
+// Render course cards based on filtered parks
+function renderParks(filteredParkType) {
+  const ParkContainer = document.getElementById('parkTypes');
+  ParkContainer.innerHTML = '';
+  filteredParkType.forEach(nationalPark => {
+    const card = `
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="${nationalPark.Image}" class="card-img-top" alt="${nationalPark.LocationName}">
+            <div class="card-body">
+              <h5 class="card-title">${nationalPark.Address}</h5>
+              <h5 class="card-title"> Location ${nationalPark.ZipCode}</h5>
+              <p class="card-text">Phone: ${nationalPark.Phone}</p>
+              <p class="card-text">Type: ${nationalPark.type}</p>
+              <p class="card-text">State: ${nationalPark.State}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    ParkContainer.innerHTML += card;
+  });
+}
+
+
+// Event listener for park filter dropdown change
+document.getElementById('parkFilter').addEventListener('change', function() {
+  const selectedPark = this.value;
+  const filteredParkType = filterParkType(selectedPark); // Fixed function name here
+  renderParks(filteredParkType);
+});
+
+//FILTER BY STATE
+
+const locationsArray = [
+  "Alabama",
+  "Alaska",
+  "American Samoa",
+  "Arizona",
+  "Arkansas",
+  "California",
+  "Colorado",
+  "Connecticut",
+  "Delaware",
+  "DC",
+  "Florida",
+  "Georgia",
+  "Guam",
+  "Hawaii",
+  "Idaho",
+  "Illinois",
+  "Indiana",
+  "Iowa",
+  "Kansas",
+  "Kentucky",
+  "Louisiana",
+  "Maine",
+  "Maryland",
+  "Massachusetts",
+  "Michigan",
+  "Minnesota",
+  "Mississippi",
+  "Missouri",
+  "Montana",
+  "Nebraska",
+  "Nevada",
+  "New Hampshire",
+  "New Jersey",
+  "New Mexico",
+  "New York",
+  "North Carolina",
+  "North Dakota",
+  "Ohio",
+  "Oklahoma",
+  "Oregon",
+  "Pennsylvania",
+  "Puerto Rico",
+  "Rhode Island",
+  "South Carolina",
+  "South Dakota",
+  "Tennessee",
+  "Texas",
+  "Utah",
+  "Vermont",
+  "Virgin Islands",
+  "Virginia",
+  "Washington",
+  "West Virginia",
+  "Wisconsin",
+  "Wyoming",
+];
+
+
+const stateFilterSelect = document.getElementById("stateFilter");
+
+// Populate options from the array
+locationsArray.forEach(location => {
+  const option = document.createElement("option");
+  option.textContent = location;
+  stateFilterSelect.appendChild(option);
+});
+
+
+
 
 
 

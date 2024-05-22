@@ -25,42 +25,60 @@
 </header>
 <main>
     <div class="container1">
+
         <h1>Lets Go To A Park</h1>
         <h1 class="mt-4 mb-4"></h1>
-        <div class="form-group"> 
+        <form class="form-floating">
+            <input type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" value=" ">
+            <label for="floatingInputValue"></label>
+        </form>
+        <div class="form-group">
             <label for="Location">Filter by Locaton:</label>
             <select class="form-control" id="stateFilter"></select>
-            
-        <div class = "row" id="states"></div> 
-          <label for="ParkType">Filter by Park:</label>
-          <select class="form-control" id="parkFilter">
-            <option value="National Park">National Park</option>
-            <option value="National Monument">National Monument</option>
-            <option value="Recreation Area">Recreation Area</option>
-            <option value="Scenic Trail">Scenic Trail</option>
-            <option value="Battlefield">Battlefield</option>
-            <option value="Historic">Historic</option>
-            <option value="Memorial">Memorial</option>
-            <option value="Preserve">Preserve</option>
-            <option value="Island">Island</option>
-            <option value="River">River</option>
-            <option value="Seashore">Seashore</option>
-            <option value="Trail">Trail</option>
-            <option value="Parkway">Parkway</option>
-          </select>
+            <br>
+            <div class="row" id="Location">
+            </div>
+            <!--Radio Butts-->
+            <div class="switch">
+                <input name="switch" id="one" type="radio" checked />
+                <label for="one" class="switch__label">Location</label>
+                <input name="switch" id="two" type="radio" />
+                <label for="two" class="switch__label">Park Type</label>
+            </div>
+
+            <!--Filter by Park-->
+            <label for="ParkType">Filter by Park:</label>
+            <select class="form-control" id="parkFilter">
+                <option value="National Park">National Park</option>
+                <option value="National Monument">National Monument</option>
+                <option value="Recreation Area">Recreation Area</option>
+                <option value="Scenic Trail">Scenic Trail</option>
+                <option value="Battlefield">Battlefield</option>
+                <option value="Historic">Historic</option>
+                <option value="Memorial">Memorial</option>
+                <option value="Preserve">Preserve</option>
+                <option value="Island">Island</option>
+                <option value="River">River</option>
+                <option value="Seashore">Seashore</option>
+                <option value="Trail">Trail</option>
+                <option value="Parkway">Parkway</option>
+            </select>
         </div>
         <br>
         <div class="row" id="parkTypes">
 
-</div>
-        
-          
+        </div>
+
+
 
 </main>
 
 <footer>
 
 </footer>
+
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -69,4 +87,4 @@
 
 </body>
 
-</html>  
+</html>
