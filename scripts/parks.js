@@ -36,7 +36,7 @@ const nationalParks = [
     ZipCode: 4609,
     Phone: "(207) 288-3338",
     Fax: "(207) 288-8813",
-    Visit: "https://www.nps.gov/acad/index.htm",
+    url: "https://www.nps.gov/acad/index.htm",
     Latitude: 44.3385559,
     Longitude: -68.2733346,
     Location: {
@@ -5846,13 +5846,10 @@ function renderParks(filteredParkType) {
     const card = `
         <div class="col-md-4 mb-4">
           <div class="card">
-            <img src="${nationalPark.Image}" class="card-img-top" alt="${nationalPark.LocationName}">
             <div class="card-body">
-              <h5 class="card-title">${nationalPark.Address}</h5>
-              <h5 class="card-title"> Location ${nationalPark.ZipCode}</h5>
-              <p class="card-text">Phone: ${nationalPark.Phone}</p>
-              <p class="card-text">Type: ${nationalPark.type}</p>
-              <p class="card-text">State: ${nationalPark.State}</p>
+              <h2 class="card-title">  ${nationalPark.LocationName} </h2>
+              <p class="card-text"> ${nationalPark.Address}, ${nationalPark.City}, ${nationalPark.State}, ${nationalPark.ZipCode}</p>
+              <p class="card-text">Lattitude: ${nationalPark.Latitude}, Longitude: ${nationalPark.Latitude}</p>
             </div>
           </div>
         </div>
@@ -5937,6 +5934,7 @@ function filterLocation(LocationName) {
 }
 
 
+
 // Event listener for park filter dropdown change
 document.getElementById('stateFilter').addEventListener('change', function() {
   const stateFilterSelect = this.value;
@@ -5956,27 +5954,8 @@ locationsArray.forEach(location => {
 
 
 
-// Assume locationsArray and parkTypesArray are predefined arrays
-
-function populateDropdown(selectedOption) {
-  const dropdown = document.getElementById('one');
-  dropdown.innerHTML = '';
 
 
-  if (selectedOption === 'location') {
-    locationsArray.forEach(location => {
-        const option = document.createElement("option");
-        option.textContent = location;
-        dropdown.appendChild(option);
-    });
-} else if (selectedOption === 'parkType') {
-    parkTypesArray.forEach(parkType => {
-        const option = document.createElement("option");
-        option.textContent = parkType;
-        dropdown.appendChild(option);
-    });
-}
-}
 
 
 
