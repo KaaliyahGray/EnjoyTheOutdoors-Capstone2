@@ -45,13 +45,13 @@ body {
 /* Custom styles for the dropdown */
 .custom-select {
   border-radius: 10px; /* Rounded corners */
-  border-color: #281881; /* Border color */
-  background-color: #281881; /* Background color */
+  border-color: orange; /* Border color */
+  background-color: orange; /* Background color */
   color: #495057; /* Text color */
 }
 
 .custom-select:focus {
-  border-color: #281881; /* Border color on focus */
+  border-color: orange; /* Border color on focus */
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Box shadow on focus */
 }
 
@@ -66,7 +66,7 @@ body {
 
 /* Hover effect */
 .custom-select:hover {
-  border-color: #281881; /* Border color on hover */
+  border-color: orange; /* Border color on hover */
 }
 .container-fluid{
 
@@ -76,20 +76,50 @@ body {
 .form-group, h1 {
   max-width: 400px; /* Adjust the max-width as needed */
   margin: 0 auto; /* This centers the container horizontally */
-  padding: 20px; /* Add padding for spacing */
+  padding: 50px; /* Add padding for spacing */
 }
   #parkTypes{
     --bs-gutter-y: 0;
     width: 100%;
     padding-right: calc(var(--bs-gutter-x)* 4);
-    padding-left: calc(var(--bs-gutter-x)* 4);
+    padding-left: calc(var(--bs-gutter-x)* 5);
  
 }
 
 body {
-  padding-top: 0px;
+
+  background: linear-gradient(135deg, #1e1e1e, #4d4d4d, #FFA500);
+ 
+
 }
 .jumbotron {
+  position: relative;
   background-image: url('https://source.unsplash.com/1600x900/?nationalpark');
   background-size: cover;
-  color: white;}
+  color: white;
+}
+
+.jumbotron::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+}
+
+
+
+  p.card-text {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  }
+.display-3 {
+
+  font-weight: bold;
+  color: white;
+}
+ 
