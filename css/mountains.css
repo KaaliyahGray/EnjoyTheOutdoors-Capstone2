@@ -73,11 +73,21 @@
   border-radius: 11%; /* Example border radius */
 
 }
-label{
+label, .fst-italic, .mb-0{
   color: white;
   font-size: 25px;
 }
  
+h2{
+  color: white;
+
+}
+
+p{
+  color: white;
+
+  font-size: 20px;
+}
 #mountainInfo{
   padding-top: 100px
 
@@ -100,7 +110,7 @@ border: transparent;
 
 .card-text{
 
-  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  background-color: transparent;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /

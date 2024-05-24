@@ -73,6 +73,7 @@ body {
   max-width: 400px; /* Adjust the max-width as needed */
   margin: 0 auto; /* This centers the container horizontally */
   padding: 50px; /* Add padding for spacing */
+  padding-top: 200px;
 }
   #parkTypes{
     --bs-gutter-y: 0;
@@ -88,6 +89,12 @@ body {
  
 
 }
+
+footer{
+  margin-top: 200px;
+  background-color:transparent}
+
+
 .jumbotron {
   position: relative;
   background-image: url('https://source.unsplash.com/1600x900/?nationalpark');
@@ -129,4 +136,8 @@ body {
 label{
   color: white;
   font-size: 25px;
+}
+
+.h6.mb-0 {
+  color: white;
 }
