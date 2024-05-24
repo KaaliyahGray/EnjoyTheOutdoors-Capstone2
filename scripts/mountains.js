@@ -553,6 +553,10 @@ dropdown.addEventListener("change", function() {
     displayMountainInfo(selectedMountain);
 });
 
+
+
+
+
 // Function to display mountain information
 function displayMountainInfo(mountain) {
     if (mountain) {
@@ -561,8 +565,8 @@ function displayMountainInfo(mountain) {
                 <img src="image-copy/${mountain.img}" class="card-img-top" alt="${mountain.name}">
                 <div class="card-body">
                     <p class="card-text">${mountain.name}</p>
-                    <p class="card-text">Description: ${mountain.desc}</p>
-                    <p class="card-text">Coords: ${mountain.coords}</p>
+                    <p class="card-text"> ${mountain.desc}</p>
+                    <p class="card-text">Latitude: ${mountain.coords.lat} Longitude: ${mountain.coords.lng}</p>
                     <p class="card-text">Level of Difficulty: ${mountain.effort}</p>
                 </div>
             </div>
@@ -571,6 +575,7 @@ function displayMountainInfo(mountain) {
         infoDisplay.textContent = ""; // Clear the information display if no option is selected
     }
 }
+
 
 
  
