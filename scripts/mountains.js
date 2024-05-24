@@ -557,12 +557,11 @@ dropdown.addEventListener("change", function() {
 function displayMountainInfo(mountain) {
     if (mountain) {
         infoDisplay.innerHTML = `
-            <h2>${mountain.name}</h2>
-            <p><strong>Description:</strong> ${mountain.desc}</p>
-            <p><strong>Elevation:</strong> ${mountain.elevation}</p>
-            <p><strong>Coords:</strong> ${mountain.coords}</p>
-            <p><strong>Level of Difficulty:</strong> ${mountain.effort}</p>
-            <img src="${mountain.imageurl}" alt="${mountain.name}">
+        <img src="image-copy/${mountain.img}" alt="${mountain.name}">
+        <p class = "text"<>Description: ${mountain.desc}</p>
+            <p><strong>Elevation: ${mountain.elevation}</p>
+            <p><strong>Coords:${mountain.coords}</p>
+            <p><strong>Level of Difficulty: ${mountain.effort}</p>
         `;
     } else {
         infoDisplay.textContent = ""; // Clear the information display if no option is selected

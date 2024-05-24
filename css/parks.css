@@ -68,10 +68,6 @@ body {
 .custom-select:hover {
   border-color: orange; /* Border color on hover */
 }
-.container-fluid{
-
-  margin-top: 400px;
-}
 
 .form-group, h1 {
   max-width: 400px; /* Adjust the max-width as needed */
