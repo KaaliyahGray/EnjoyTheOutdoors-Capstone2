@@ -69,34 +69,45 @@ body {
   border-color: orange; /* Border color on hover */
 }
 
-.form-group, h1 {
+ h1 {
   max-width: 400px; /* Adjust the max-width as needed */
   margin: 0 auto; /* This centers the container horizontally */
   padding: 50px; /* Add padding for spacing */
   padding-top: 200px;
 }
   #parkTypes{
+    padding-top: 50px;
+
     --bs-gutter-y: 0;
     width: 100%;
     padding-right: calc(var(--bs-gutter-x)* 4);
     padding-left: calc(var(--bs-gutter-x)* 5);
  
 }
-
+.form-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding-top: 20px;
+  padding: 40px;
+}
 body {
 
-  background: linear-gradient(135deg, #1e1e1e, #4d4d4d, #FFA500);
+  background: linear-gradient(135deg, #ff7300b0, #191714, #0e0a06b0);
  
 
 }
 
 footer{
-  margin-top: 200px;
-  background-color:transparent}
+  margin-top: 100px;
+  background-color:transparent
+  
+}
 
   .jumbotron {
     position: relative;
-    background-image: url('https://source.unsplash.com/1600x900/?nationalpark');
+    background-image: url('/images/national.jpeg');
     background-size: cover;
     color: white;
   }
@@ -108,9 +119,8 @@ footer{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); /* Darker gradient */
-    z-index: -1; /* Ensure the gradient is behind the content */
-  }
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)); /* Darker gradient */
+    z-index: -.9; /* Ensure the gradient is behind the content */}
   
   .jumbotron .container {
     text-align: center;
@@ -122,52 +132,47 @@ footer{
 
 .card{
 
-  width: 100%;
-  background-color: transparent; /* Transparent background */
-  border: transparent; /* Orange border */
-  border-radius: 10px;
-  margin-bottom: 20px;
-  overflow: hidden;
-}
+  color: white;
+
+  background-color: transparent;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /}
 
   p.card-text {
     background-color: transparent;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Optional: Add shadow */
     color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /}
 
-  }
-.display-3, .card-title{
+
+  
+h1.display-3{
 
   font-weight: bold;
   color: white;
 }
 label{
+  padding-top: 90px;
+  padding: 80px;
   color: white;
-width: 100%;
-  background-color: transparent;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /
+  font-size: 25px;
+  
 }
 
-.h6.mb-0 {
+.h6.mb-0, .col-md-6 {
   color: white;
-
-  background-color: transparent;
+background-color: transparent;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /}
-
-  .row{
-     color: white;
-
-  background-color: transparent;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /}
-
-
+}
+  .col-md-6{
+    padding-top: 90px;
     padding: 80px;
-  }
+   }
+   p, h3 {
+    color: white;
+
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /}
+
+   
