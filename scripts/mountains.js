@@ -554,20 +554,26 @@ dropdown.addEventListener("change", function() {
 });
 
 // Function to display mountain information
+
+
 function displayMountainInfo(mountain) {
     if (mountain) {
         infoDisplay.innerHTML = `
-        <img src="image-copy/${mountain.img}" alt="${mountain.name}">
-        <p class = "text"<>Description: ${mountain.desc}</p>
-            <p><strong>Elevation: ${mountain.elevation}</p>
-            <p><strong>Coords:${mountain.coords}</p>
-            <p><strong>Level of Difficulty: ${mountain.effort}</p>
+        <div class="card">
+            <img src="image-copy/${mountain.img}" class="card-img-top" alt="${mountain.name}">
+            <div class="card-body">
+            <p class="card-text"> ${mountain.name}</p>
+
+<p class="card-text">Description: ${mountain.desc}</p>
+                <p class="card-text">Coords: ${mountain.coords}</p>
+                <p class="card-text">Level of Difficulty: ${mountain.effort}</p>
+            </div>
+        </div>
         `;
     } else {
         infoDisplay.textContent = ""; // Clear the information display if no option is selected
     }
 }
-
 
 
 
