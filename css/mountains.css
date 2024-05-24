@@ -56,14 +56,28 @@
   
 
 
-/* styles.css */
+  .jumbotron {
+    position: relative;
+    background-image: url('https://source.unsplash.com/1600x900/?nationalpark');
+    background-size: cover;
+    color: white;
+    height: 500px; /* Adjust the height as needed */
+  }
+  
+  .jumbotron::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    z-index: -1; /* Ensure the gradient is behind the content */
+  }
+  
 
-/* Centering container */
-.center-container {
-  display: flex;
-  align-items: center; /* Vertically center */
-  height: 50vh; /* Full viewport height */
-}
+
+
 
 /* Styles for the container */
 .container1 {
@@ -73,9 +87,16 @@
   border-radius: 11%; /* Example border radius */
 
 }
-label, .fst-italic, .mb-0{
-  color: white;
+label,  .mb-0{
   font-size: 25px;
+}
+.fst-italic{
+  color: white;
+
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /
 }
  
 h2{
@@ -99,8 +120,8 @@ padding-right: 20px;
   padding-top: 100px;
 }
 
-main{
-padding: 100px;
+article{
+padding: 20px;
 
 }
 .card{
@@ -109,6 +130,13 @@ border: transparent;
 }
 
 .card-text{
+
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /
+}
+.pb-2{
 
   background-color: transparent;
   padding: 20px;
