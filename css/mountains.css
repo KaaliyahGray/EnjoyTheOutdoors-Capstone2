@@ -54,6 +54,8 @@
     background: linear-gradient(135deg, #1e1e1e, #4d4d4d, #FFA500);
   }
   
+
+
 /* styles.css */
 
 /* Centering container */
@@ -67,11 +69,14 @@
 .container1 {
   text-align: center; /* Center text */
   background-color: transparent; /* Example background color */
-  padding-top: 500px; /* Example padding */
-  padding: 200px;
+  padding: 50px;
   border-radius: 11%; /* Example border radius */
-}
 
+}
+label{
+  color: white;
+  font-size: 25px;
+}
  
 #mountainInfo{
   padding-top: 100px
@@ -81,7 +86,7 @@
 
 .col-md-4{
 padding-right: 20px;
-  padding-top: 300px;
+  padding-top: 100px;
 }
 
 main{
@@ -90,15 +95,20 @@ padding: 100px;
 }
 .card{
   background-color: transparent;
-
+border: transparent;
 }
 
 .card-text{
 
-  color: white;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /
 }
 
-.custom-card {
-    background-color: rgba(0, 0, 0, 0.7); /* black transparent background */
-    color: white; /* white text */
+.bg-body-tertiary  {
+  background-color: transparent black; 
+  padding: 1rem; /* Padding */
+  margin-bottom: 1rem; /* Bottom margin */
+  border-radius: 0.25rem; /* Rounded corners */
 }
