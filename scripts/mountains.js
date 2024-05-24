@@ -534,52 +534,44 @@
 }
 
 ];
-// Get the dropdown element and display the info
 const dropdown = document.getElementById('mountainDropdown');
 const infoDisplay = document.getElementById("mountainInfo");
 
 // Populate the dropdown
 mountains.forEach(function(mountain) {
     let option = document.createElement("option");
+    
     option.text = mountain.name;
     option.value = mountain.name; // You can use a unique identifier here if needed
-    dropdown.add(option);
+    dropdown.appendChild(option);
 });
 
-// Add event listener to each option in the dropdown
+// Add event listener to the dropdown
 dropdown.addEventListener("change", function() {
-    const selectedname = dropdown.value;
-    const selectedMountain = mountains.find(mountain => mountain.name === selectedname);
+    const selectedName = dropdown.value;
+    const selectedMountain = mountains.find(mountain => mountain.name === selectedName);
     displayMountainInfo(selectedMountain);
 });
 
 // Function to display mountain information
-
-
 function displayMountainInfo(mountain) {
     if (mountain) {
         infoDisplay.innerHTML = `
-        <div class="card">
-            <img src="image-copy/${mountain.img}" class="card-img-top" alt="${mountain.name}">
-            <div class="card-body">
-            <p class="card-text"> ${mountain.name}</p>
-
-<p class="card-text">Description: ${mountain.desc}</p>
-                <p class="card-text">Coords: ${mountain.coords}</p>
-                <p class="card-text">Level of Difficulty: ${mountain.effort}</p>
+            <div class="card">
+                <img src="image-copy/${mountain.img}" class="card-img-top" alt="${mountain.name}">
+                <div class="card-body">
+                    <p class="card-text">${mountain.name}</p>
+                    <p class="card-text">Description: ${mountain.desc}</p>
+                    <p class="card-text">Coords: ${mountain.coords}</p>
+                    <p class="card-text">Level of Difficulty: ${mountain.effort}</p>
+                </div>
             </div>
-        </div>
         `;
     } else {
         infoDisplay.textContent = ""; // Clear the information display if no option is selected
     }
 }
 
-
-
-
-  //NEW
-  
 
  
 
