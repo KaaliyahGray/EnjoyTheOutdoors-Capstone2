@@ -578,6 +578,7 @@ function displayMountainInfo(mountain) {
 
 
 
+
  
 
 
